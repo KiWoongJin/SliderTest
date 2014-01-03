@@ -9,10 +9,16 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *labelTest;
 
 @end
 
 @implementation ViewController
+- (IBAction)progressChanged:(id)sender {
+    UISlider *slider = (UISlider *)sender;
+    
+    self.labelTest.text = [NSString stringWithFormat:@"Value : %f", slider.value];
+}
 
 - (void)viewDidLoad
 {
